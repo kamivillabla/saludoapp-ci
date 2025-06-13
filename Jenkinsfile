@@ -12,26 +12,26 @@ pipeline {
     }
     stage('Compilar') {
       steps {
-        bat 'mvn clean compile'
+        sh 'mvn clean compile'
       }
     }
     stage('Probar') {
       steps {
-        bat 'mvn test'
+        sh 'mvn test'
       }
     }
     stage('Empaquetar') {
       steps {
-        bat 'mvn package'
+        sh 'mvn package'
       }
     }
   }
   post {
     success {
-      echo "Build exitoso"
+      echo "El build fue exitoso"
     }
     failure {
-      echo "El build fallo"
+      echo "El build falló"
     }
   }
 }
