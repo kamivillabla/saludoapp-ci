@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Clonar') {
       steps {
-        git 'https://github.com/kamivillabla/saludoapp-ci.git'
+        git branch: 'main', url: 'https://github.com/kamivillabla/saludoapp-ci.git'
       }
     }
     stage('Compilar') {
